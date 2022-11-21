@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body class="background transition-all">
+    <nav
+      class="fixed flex justify-between items-center px-10 py-3 w-full h-auto"
+    >
+      <h2 class="text-2xl font-bold">Mateusz Pasek</h2>
+      <img
+        src="assets/icons/moon.svg"
+        alt="moon"
+        class="w-15 transition-all"
+        id="toggle-mode"
+      />
+    </nav>
+    <div class="min-h-screen w-screen flex justify-center items-center">
+      <div class="flex items-center w-3/4">
+        <div class="flex flex-col w-2/3">
+          <h2 class="ml-1 text-3xl tracking-tighter leading-none">
+            Student, programmer and passionate UI/UX designer.
+          </h2>
+          <h1 class="text-[5vw] tracking-tighter leading-none">
+            Because <span>great</span> <br />
+            ideas need <span>great</span> UI.
+          </h1>
+        </div>
+        <div class="flex oval overflow-hidden transition-all">
+          <img src="assets/Matt.svg" alt="me" class="mt-auto mx-auto" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
