@@ -178,7 +178,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label {
   color: var(--color-primary) !important;
 }
 
@@ -189,7 +190,8 @@ h6 {
 .background-primary p,
 .background-primary h1,
 .background-primary h2,
-.background-primary h3 {
+.background-primary h3,
+.background-primary label{
   color: var(--color-background) !important;
 }
 
@@ -200,7 +202,8 @@ h6 {
 .background-background p,
 .background-background h1,
 .background-background h2,
-.background-background h3 {
+.background-background h3,
+.background-background label {
   color: var(--color-primary) !important;
 }
 

@@ -20,8 +20,13 @@ function toggleTheme() {
     arrows.addClass("icon-background");
     toggleMode.attr("src", "assets/icons/moon.svg");
     icons.forEach(icon => {
-      icon.classList.remove("icon-background");
-      icon.classList.add("icon-primary");
+      if ($(icon).parent().hasClass("background-primary")) {
+        $(icon).addClass("icon-background");
+        $(icon).removeClass("icon-primary");
+      } else {
+        icon.classList.removeClass("icon-background");
+        icon.classList.addClass("icon-primary");
+      }
     });
   } else {
     body.css("--color-primary", "#1F2325");
@@ -31,8 +36,13 @@ function toggleTheme() {
     arrows.removeClass("icon-background");
     toggleMode.attr("src", "assets/icons/sun.svg");
     icons.forEach(icon => {
-      icon.classList.remove("icon-primary");
-      icon.classList.add("icon-background");
+      if ($(icon).parent().hasClass("background-primary")) {
+        $(icon).removeClass("icon-background");
+        $(icon).addClass("icon-primary");
+      } else {
+        icon.classList.addClass("icon-background");
+        icon.classList.removeClass("icon-primary");
+      }
     });
   }
 }

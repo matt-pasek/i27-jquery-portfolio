@@ -103,7 +103,7 @@
           <p class="text-2xl opacity-50">Recent projects</p>
           <h2 class="text-3xl font-medium">Explore my works</h2>
           <div id="projects-cont" class="flex flex-col sm:flex-row flex-wrap py-5 gap-5 z-10"></div>
-          <button class="background-primary text-2xl font-medium py-2 px-4 rounded-lg transition-all" id="button-project">
+          <button class="background-primary text-2xl font-medium py-2 px-4 rounded-lg transition-all w-52 mx-auto block" id="button-project">
             See more
           </button>
         </div>
@@ -116,8 +116,48 @@
       </div>
     </div>
     <div id="contact" class="overflow-hidden transition-all absolute hidden translate-x-0 !-translate-x-[100vw]">
-      <div class="h-screen w-screen flex justify-center items-center transition-all pb-10 px-12 sm:px-32">
+      <div class="h-screen w-screen flex flex-col justify-center items-center transition-all pb-10 px-12 sm:px-32 gap-2">
         <h2 class="text-4xl font-medium text-center gap-5">Connect with me</h2>
+        <div class="flex gap-2">
+          <p class="text-2xl font-medium opacity-60">Via:</p>
+          <div class="contact-method flex flex-wrap items-center gap-5">
+            <div class="flex background-primary p-1 gap-1 rounded-md">
+              <img src="assets/icons/github.svg" alt="github" class="h-6 icon-react icon-background" />
+              <p class="font-medium opacity-80"><a target="_blank" href="https://github.com/matt-pasek">GitHub</a></p>
+            </div>
+            <div class="contact-method flex background-primary p-1 gap-1 rounded-md">
+              <img src="assets/icons/showwcase.svg" alt="Showwcase" class="h-6 icon-react icon-background" />
+              <p class="font-medium opacity-80"><a target="_blank" href="https://www.showwcase.com/matt-pasek">Showwcase</a></p>
+            </div>
+            <div class="contact-method flex background-primary p-1 gap-1 rounded-md">
+              <img src="assets/icons/linkedin.svg" alt="linkedin" class="h-6 icon-react icon-background" />
+              <p class="font-medium opacity-80"><a target="_blank" href="https://www.linkedin.com/in/m-pasek/">LinkedIn</a></p>
+            </div>
+            <div class="contact-method flex background-primary p-1 gap-1 rounded-md">
+              <img src="assets/icons/mail.svg" alt="mail" class="h-6" />
+              <p class="font-medium opacity-80"><a target="_blank" href="mailto:contact.mpasek@icloud.com">Mail</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center h-2/3">
+          <form class="flex flex-col gap-3 background-primary p-5 rounded-xl">
+            <div class="flex gap-5">
+              <div class="flex flex-col">
+                <label for="name" class="text-lg font-medium">Name</label>
+                <input type="text" name="name" id="name" class="input" />
+              </div>
+              <div class="flex flex-col">
+                <label for="mail" class="text-lg font-medium">Email</label>
+                <input type="email" name="mail" id="mail" class="input" />
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <label for="message" class="text-lg font-medium">Message</label>
+              <textarea name="message" id="message" class="input" rows="5"></textarea>
+            </div>
+          </form>
+          <img src="assets/Matt-standing.svg" alt="me" class="h-full" />
+        </div>
       </div>
     </div>
     <div id="modal" class="sm:!bg-transparent fixed flex items-center justify-center top-0 left-0 background-background backdrop-blur-xl w-screen h-screen hidden transition-all z-40"></div>
