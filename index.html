@@ -16,17 +16,15 @@
     <link rel="stylesheet" href="final.css" />
     <title>Portfolio</title>
   </head>
-  <body class="background transition-all overflow-hidden overflow-x-hidden w-screen">
+  <body class="background transition-all overflow-hidden overflow-x-hidden w-screen select-none">
     <nav
-      class="fixed flex justify-between sm:justify-around items-center px-10 py-3 w-full h-auto hidden backdrop-filter backdrop-blur-sm bg-opacity-50"
+      class="fixed flex justify-between sm:justify-around items-center px-10 py-3 w-full h-auto hidden backdrop-filter backdrop-blur-sm bg-opacity-50 z-50"
       id="navbar"
     >
-      <h2 class="text-2xl text-center font-bold sm:w-48">Mateusz Pasek</h2>
+      <h2 id="nav-home" class="text-2xl text-center font-bold cursor-pointer sm:w-48">Mateusz Pasek</h2>
       <div class="gap-5 items-center hidden sm:flex">
-        <p class="text-lg font-medium cursor-pointer transition-all"
-          >Projects</p
-        >
-        <p class="text-lg font-medium cursor-pointer transition-all">Contact</p>
+        <p id="nav-projects" class="text-lg font-medium cursor-pointer transition-all">Projects</p>
+        <p id="nav-contact" class="text-lg font-medium cursor-pointer transition-all">Contact</p>
       </div>
       <div class="flex justify-center sm:w-48">
         <img
@@ -37,7 +35,7 @@
         />
       </div>
     </nav>
-    <div id="homepage" class="overflow-hidden">
+    <div id="homepage" class="active-tab overflow-hidden transition-all translate-x-0">
       <div
         class="h-screen w-screen flex justify-center items-center transition-all"
       >
@@ -66,9 +64,9 @@
       <div id="homepage-content" class="hidden pb-10">
         <div
           id="about"
-          class="flex flex-col justify-end bg-[#1f2325] background-primary w-full h-[60vh] lg:h-64 px-24 py-6 overflow-hidden relative transition-all"
+          class="flex flex-col justify-end bg-[#1f2325] background-primary w-full h-[85vh] lg:h-80 px-24 py-6 overflow-hidden relative transition-all"
         >
-          <div id="desc" class="absolute top-0 left-0 px-12 sm:px-24 py-6 transition-all">
+          <div id="desc" class="absolute top-0 w-full left-0 px-12 sm:px-32 py-6 transition-all">
             <h2 class="text-3xl !text-[#ece9de] font-medium">About me</h2>
             <p class="text-lg !text-[#ece9de] pt-1 pb-2">
               I'm a 16-year-old student from Poland. I'm passionate about
@@ -80,67 +78,11 @@
               programming language is either JavaScript or Java.
             </p>
           </div>
-          <div id="skillset" class="absolute top-0 left-0 px-12 sm:px-24 py-6 translate-x-[100vw] transition-all">
+          <div id="skillset" class="absolute top-0 left-0 px-12 sm:px-32 py-6 translate-x-[100vw] transition-all">
             <h2 class="text-3xl !text-[#ece9de] font-medium">My skillset</h2>
-            <div class="flex flex-wrap w-full pt-2 gap-2">
-              <div id="nodejs" data-level="2" class="flex flex-col rounded-xl skill p-2">
-                <p class="">NodeJS</p>
-              </div>
-              <div id="js" data-level="3" class="flex flex-col rounded-xl skill p-2">
-                <p class="">JavaScript</p>
-              </div>
-              <div id="ts" data-level="2" class="flex flex-col rounded-xl skill p-2">
-                <p class="">TypeScript</p>
-              </div>
-              <div id="cpp" data-level="1" class="flex flex-col rounded-xl skill p-2">
-                <p class="">C++</p>
-              </div>
-              <div id="chash" data-level="1" class="flex flex-col rounded-xl skill p-2">
-                <p class="">C#</p>
-              </div>
-              <div id="html" data-level="3" class="flex flex-col rounded-xl skill p-2">
-                <p class="">HTML</p>
-              </div>
-              <div id="css" data-level="3" class="flex flex-col rounded-xl skill p-2">
-                <p class="">CSS</p>
-              </div>
-              <div id="java" data-level="3" class="flex flex-col rounded-xl skill p-2">
-                <p class="">Java</p>
-              </div>
-              <div id="kotlin" data-level="2" class="flex flex-col rounded-xl skill p-2">
-                <p class="">Kotlin</p>
-              </div>
-              <div id="jetcomp" data-level="1" class="flex flex-col rounded-xl skill p-2">
-                <p class="">Jetpack Compose</p>
-              </div>
-              <div id="ui" data-level="3" class="flex flex-col rounded-xl skill p-2">
-                <p class="">UI/UX</p>
-              </div>
-              <div id="git" data-level="3" class="flex flex-col rounded-xl skill p-2">
-                <p class="">Git</p>
-              </div>
-              <div id="hrm" data-level="2" class="flex flex-col rounded-xl skill p-2">
-                <p class="">Human Resources Management</p>
-              </div>
-              <div id="tailwind" data-level="4" class="flex flex-col rounded-xl skill p-2">
-                <p class="">TailwindCSS</p>
-              </div>
-              <div id="vue" data-level="3" class="flex flex-col rounded-xl skill p-2">
-                <p class="">VueJS</p>
-              </div>
-              <div id="react" data-level="1" class="flex flex-col rounded-xl skill p-2">
-                <p class="">React</p>
-              </div>
-              <div id="py" data-level="2" class="flex flex-col rounded-xl skill p-2">
-                <p class="">Python</p>
-              </div>
-              <div id="mariadb" data-level="2" class="flex flex-col rounded-xl skill p-2">
-                <p class="">MariaDB</p>
-              </div>
-              <div id="mongo" data-level="1" class="flex flex-col rounded-xl skill p-2">
-                <p class="">MongoDB</p>
-              </div>
-            </div>
+            <div id="skills" class="flex flex-wrap w-full py-2 gap-2"></div>
+            <h2 class="text-3xl !text-[#ece9de] font-medium">Tech Stack</h2>
+            <div id="tech-skills" class="flex flex-wrap w-full pt-2 gap-2"></div>
           </div>
           <div class="flex items-center justify-center gap-2">
             <img
@@ -157,11 +99,27 @@
               id="arrow-r" />
           </div>
         </div>
-        <div id="projects" class="w-full px-12 sm:px-24 py-5">
+        <div id="projects" class="w-full px-12 sm:px-32 py-5">
           <p class="text-2xl opacity-50">Recent projects</p>
           <h2 class="text-3xl font-medium">Explore my works</h2>
+          <div id="projects-cont" class="flex flex-col sm:flex-row flex-wrap py-5 gap-5 z-10"></div>
+          <button class="background-primary text-2xl font-medium py-2 px-4 rounded-lg transition-all" id="button-project">
+            See more
+          </button>
         </div>
       </div>
     </div>
+    <div id="all-projects" class="overflow-hidden transition-all absolute hidden translate-x-0 !-translate-x-[100vw]">
+      <div class="min-h-screen w-screen flex flex-col justify-center items-center transition-all pt-20 pb-10 px-8 sm:px-32">
+        <h2 class="text-4xl font-medium text-center">View all my <span class="accented">projects</span></h2>
+        <div id="all-projects-cont" class="flex flex-col delayedSlideIn pt-5 w-full"></div>
+      </div>
+    </div>
+    <div id="contact" class="overflow-hidden transition-all absolute hidden translate-x-0 !-translate-x-[100vw]">
+      <div class="h-screen w-screen flex justify-center items-center transition-all pb-10 px-12 sm:px-32">
+        <h2 class="text-4xl font-medium text-center gap-5">Connect with me</h2>
+      </div>
+    </div>
+    <div id="modal" class="sm:!bg-transparent fixed flex items-center justify-center top-0 left-0 background-background backdrop-blur-xl w-screen h-screen hidden transition-all z-40"></div>
   </body>
 </html>

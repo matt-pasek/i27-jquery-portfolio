@@ -587,7 +587,7 @@ nav {
 }
 
 .oval img {
-  animation: 4s ease-out 0s 1 scaleDown;
+  animation: 2s ease-out 0s 1 scaleDown;
 }
 
 .dot {
@@ -650,6 +650,74 @@ nav {
   }
 }
 
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 100%;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes slideFromDown {
+  0% {
+    transform: translateY(100%);
+    opacity: 100%;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes slideFromDown2 {
+  0% {
+    transform: translateY(100vh);
+    opacity: 100%;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes opacityIn {
+  0% {
+    -webkit-backdrop-filter: opacity(0);
+            backdrop-filter: opacity(0);
+  }
+
+  100% {
+    -webkit-backdrop-filter: opacity(0.5);
+            backdrop-filter: opacity(0.5);
+  }
+}
+
+.delayedSlideIn {
+  animation: 1.5s ease-in-out 0.5s 1 slideFromDown2;
+}
+
+.opacityIn {
+  animation: 1s ease-out 0s 1 opacityIn;
+}
+
+.slideFromDown {
+  animation: 1s ease-out 0s 1 slideFromDown;
+}
+
+.slideFromLeft {
+  animation: 1s ease-out 0s 1 slideFromLeft;
+}
+
+#title {
+  animation: 1s ease-out 0s 1 slideFromLeft;
+}
+
 /* color */
 
 p,
@@ -671,6 +739,17 @@ h6 {
 .background-primary h2,
 .background-primary h3 {
   color: var(--color-background) !important;
+}
+
+.background-background {
+  background-color: var(--color-background) !important;
+}
+
+.background-background p,
+.background-background h1,
+.background-background h2,
+.background-background h3 {
+  color: var(--color-primary) !important;
 }
 
 .skill p,
