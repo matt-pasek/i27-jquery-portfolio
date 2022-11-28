@@ -23,7 +23,6 @@
   background: rgba(0, 0, 0, 0);
 }
 
-
 * {
   font-family: "Quicksand", sans-serif;
 }
@@ -38,6 +37,17 @@ body {
 
 nav {
   animation: 1s ease-out 0s 1 slideDown;
+  background-color: var(--color-background);
+}
+
+label {
+  color: var(--color-accent);
+}
+
+textarea,
+.input {
+  background-color: var(--color-background) !important;
+  color: var(--color-primary) !important;
 }
 
 /* shapes */
@@ -79,11 +89,13 @@ nav {
 }
 
 .icon-primary {
-  filter: brightness(0) saturate(100%) invert(92%) sepia(7%) saturate(652%) hue-rotate(329deg) brightness(108%) contrast(85%);
+  filter: brightness(0) saturate(100%) invert(92%) sepia(7%) saturate(652%)
+    hue-rotate(329deg) brightness(108%) contrast(85%);
 }
 
 .icon-background {
-  filter: brightness(0) saturate(100%) invert(9%) sepia(21%) saturate(368%) hue-rotate(155deg) brightness(90%) contrast(88%);
+  filter: brightness(0) saturate(100%) invert(9%) sepia(21%) saturate(368%)
+    hue-rotate(155deg) brightness(90%) contrast(88%);
 }
 
 /* animations */
@@ -171,6 +183,13 @@ nav {
 }
 
 /* color */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-background {
+  color: var(--color-background);
+}
 
 p,
 h1,
@@ -191,7 +210,7 @@ label {
 .background-primary h1,
 .background-primary h2,
 .background-primary h3,
-.background-primary label{
+.background-primary label {
   color: var(--color-background) !important;
 }
 
@@ -199,6 +218,7 @@ label {
   background-color: var(--color-background) !important;
 }
 
+.background-background,
 .background-background p,
 .background-background h1,
 .background-background h2,

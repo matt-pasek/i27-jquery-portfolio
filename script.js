@@ -3,7 +3,6 @@ const dots = $(".dot").toArray();
 const body = $("body");
 const arrows = $(".arrow");
 
-
 // theming
 const toggleMode = $("#toggle-mode");
 
@@ -19,7 +18,7 @@ function toggleTheme() {
     arrows.removeClass("icon-primary");
     arrows.addClass("icon-background");
     toggleMode.attr("src", "assets/icons/moon.svg");
-    icons.forEach(icon => {
+    icons.forEach((icon) => {
       if ($(icon).parent().hasClass("background-primary")) {
         $(icon).addClass("icon-background");
         $(icon).removeClass("icon-primary");
@@ -35,7 +34,7 @@ function toggleTheme() {
     arrows.addClass("icon-primary");
     arrows.removeClass("icon-background");
     toggleMode.attr("src", "assets/icons/sun.svg");
-    icons.forEach(icon => {
+    icons.forEach((icon) => {
       if ($(icon).parent().hasClass("background-primary")) {
         $(icon).removeClass("icon-background");
         $(icon).addClass("icon-primary");
@@ -51,7 +50,7 @@ function toggleTheme() {
 let currentContent = 0;
 const desc = $("#desc");
 const skillset = $("#skillset");
-const contentArray = [desc, skillset]
+const contentArray = [desc, skillset];
 
 function switchContent(num) {
   switch (num) {
@@ -65,11 +64,17 @@ function switchContent(num) {
       break;
   }
   currentContent += num;
-  if (currentContent === 0) { $("#arrow-l").addClass("disabled"); }
-  else { $("#arrow-l").removeClass("disabled"); }
-  if (currentContent === contentArray.length - 1) { $("#arrow-r").addClass("disabled"); }
-  else { $("#arrow-r").removeClass("disabled"); }
-  dots.forEach(dot => {
+  if (currentContent === 0) {
+    $("#arrow-l").addClass("disabled");
+  } else {
+    $("#arrow-l").removeClass("disabled");
+  }
+  if (currentContent === contentArray.length - 1) {
+    $("#arrow-r").addClass("disabled");
+  } else {
+    $("#arrow-r").removeClass("disabled");
+  }
+  dots.forEach((dot) => {
     if (dot.id === `dot-${currentContent}`) {
       dot.classList.add("dot-active");
     } else {
@@ -102,17 +107,34 @@ const projectsArray = [
     "https://e-sasiad.pl/img/mockup1.d94d19ae.png",
     true,
     "https://github.com/IT-Students-Association/esasiad-frontend",
-    ["VueJS", "NodeJS", "TypeScript", "ExpressJS", "MongoDB", "TailwindCSS", "Figma"]
+    [
+      "VueJS",
+      "NodeJS",
+      "TypeScript",
+      "ExpressJS",
+      "MongoDB",
+      "TailwindCSS",
+      "Figma",
+    ]
   ),
   new project(
     "UI/UX | Frontend Developer",
     "CyberInfo",
-    "is a collaborative effort developed for the computer competition \"Zwolnieni z Teorii.\" It's a project created by young enthusiasts for everyone who wants to make their web browsing a little more safe. Our mission is to provide everyone with verifiable information concerning cybersecurity and privacy issues.",
+    'is a collaborative effort developed for the computer competition "Zwolnieni z Teorii." It\'s a project created by young enthusiasts for everyone who wants to make their web browsing a little more safe. Our mission is to provide everyone with verifiable information concerning cybersecurity and privacy issues.',
     "https://cyberinfo.website",
     "assets/cyberinfo-dark.png",
     false,
     "",
-    ["NodeJS", "VueJS", "JavaScript", "ExpressJS", "HTML", "MongoDB", "CSS", "Figma"]
+    [
+      "NodeJS",
+      "VueJS",
+      "JavaScript",
+      "ExpressJS",
+      "HTML",
+      "MongoDB",
+      "CSS",
+      "Figma",
+    ]
   ),
   new project(
     "UI/UX | Frontend Developer",
@@ -122,12 +144,12 @@ const projectsArray = [
     "assets/osc.png",
     true,
     "https://github.com/LucasHazardous/OpenSourceCasino",
-    ["ViteJS", "JavaScript", "TailwindCSS", "HTML", "Figma"]
+    ["ViteJS", "VueJS", "CSS", "JavaScript", "TailwindCSS", "HTML", "Figma"]
   ),
 ];
 
 function loadProjects() {
-  projectsArray.forEach(project => {
+  projectsArray.forEach((project) => {
     const projectCard = $(`
       <div id="${project.name}" class="cursor-pointer project flex flex-col items-center text-center sm:max-w-[20vw] gap-2 rounded-xl transition-all overflow-hidden border background-primary">
         <div class="w-full p-1 h-1/2 max-h-[30vh] overflow-hidden">
@@ -136,7 +158,7 @@ function loadProjects() {
         <div class="flex flex-col p-5 pt-3">
           <p class="opacity-60">${project.role}</p>
           <h2 class="text-2xl font-bold">${project.name}</h2>
-          <p><a class="accented decorated transition-all" target="_blank" href="https://e-sasiad.pl">${project.name}</a> ${project.description}</p>
+          <p><a class="accented decorated transition-all" target="_blank" href="${project.link}">${project.name}</a> ${project.description}</p>
         </div>
       </div>
     `);
@@ -147,11 +169,11 @@ function loadProjects() {
 function showProjectModal(projectName) {
   const modal = $("#modal");
   body.css("overflow", "hidden");
-  const project = projectsArray.find(project => project.name === projectName);
+  const project = projectsArray.find((project) => project.name === projectName);
   const projectInfo = $(`
-    <div class="flex flex-col gap-2 p-10 sm:w-2/3 sm:max-h-[70vh] background-background rounded-xl transition-all p-5 slideFromDown">
+    <div class="flex flex-col gap-2 sm:w-2/3 sm:max-h-[70vh] background-primary rounded-xl transition-all p-5 slideFromDown">
       <div class="w-full">
-        <img src="assets/icons/close-square.svg" alt="close" id="closeModal" class="pt-14 w-10 cursor-pointer icon-react icon-primary" />
+        <img src="assets/icons/close-square.svg" alt="close" id="closeModal" class="pt-14 sm:pt-0 w-10 cursor-pointer icon-react icon-primary" />
       </div>
       <div class="overflow-hidden">
         <img src="${project.image}" alt="${project.name}" class="max-h-[40vh] object-fit object-center" />
@@ -173,7 +195,7 @@ function showProjectModal(projectName) {
 
 // all projects
 function loadAllProjects() {
-  projectsArray.forEach(project => {
+  projectsArray.forEach((project) => {
     const projectCard = $(`
       <div id="${project.name}-all" class="cursor-pointer project-all flex flex-col sm:flex-row text-center sm:text-left justify-center gap-2 rounded-xl transition-all overflow-hidden">
         <div class="p-1 max-h-[40vh] sm:max-w-[30vw] overflow-hidden">
@@ -188,7 +210,7 @@ function loadAllProjects() {
       </div>
     `);
     $("#all-projects-cont").append(projectCard);
-    project.tech.forEach(tech => {
+    project.tech.forEach((tech) => {
       const techIcon = $(`
         <div class="flex items-center justify-center gap-1 sm:gap-2">
           <img src="assets/icons/${tech.toLowerCase()}.svg" alt="${tech}" class="w-5" />
@@ -252,7 +274,7 @@ const skillsetArray = [
 function loadSkills() {
   const techSkills = $("#tech-skills");
   const skillset = $("#skills");
-  techSkillsArray.forEach(skill => {
+  techSkillsArray.forEach((skill) => {
     const skillCard = $(`
       <div id="${skill.id}" data-level="${skill.level}" class="flex flex-col rounded-xl skill p-2">
         <p class="">${skill.name}</p>
@@ -260,7 +282,7 @@ function loadSkills() {
     `);
     techSkills.append(skillCard);
   });
-  skillsetArray.forEach(skill => {
+  skillsetArray.forEach((skill) => {
     const skillCard = $(`
       <div id="${skill.id}" data-level="${skill.level}" class="flex flex-col rounded-xl skill p-2">
         <p class="">${skill.name}</p>
@@ -272,8 +294,10 @@ function loadSkills() {
 
 function skillPalette() {
   const skills = $(".skill").toArray();
-  const skillPalette = body.hasClass("background") ? similarPaletteDark : similarPaletteLight;
-  skills.forEach(skill => {
+  const skillPalette = body.hasClass("background")
+    ? similarPaletteDark
+    : similarPaletteLight;
+  skills.forEach((skill) => {
     const skillName = skill.id;
     const skillLevel = skill.getAttribute("data-level");
     const skillColor = skillPalette[skillLevel - 1];
@@ -284,6 +308,9 @@ function skillPalette() {
 // tab switching
 
 function goTo(fromId, toId) {
+  if (fromId == toId) {
+    return;
+  }
   const from = $(`#${fromId}`);
   const to = $(`#${toId}`);
   from.addClass("absolute");
@@ -303,14 +330,14 @@ function goTo(fromId, toId) {
 }
 
 function getCurrentTab() {
-  return body.children(".active-tab").attr('id');
+  return body.children(".active-tab").attr("id");
 }
 
 // main function
 
 $(document).ready(function () {
   loadProjects();
-  loadSkills()
+  loadSkills();
   skillPalette();
   loadAllProjects();
   if (!darkThemeMq.matches) {
@@ -343,7 +370,7 @@ $(document).ready(function () {
     showProjectModal($(this).attr("id"));
   });
 
-  $(".project").hover(function() {
+  $(".project").hover(function () {
     let cyberinfo = $("img[alt='CyberInfo']");
     $(this).toggleClass("background-background");
     if ($(this).has(cyberinfo).length) {
@@ -356,21 +383,21 @@ $(document).ready(function () {
   });
 
   const btnProjects = $("#button-project");
-  btnProjects.click(function() {
+  btnProjects.click(function () {
     goTo("homepage", "all-projects");
   });
-  btnProjects.hover(function() {
+  btnProjects.hover(function () {
     $(this).toggleClass("accented");
     $(this).toggleClass("font-regular");
   });
 
-  $("#nav-home").click(function() {
+  $("#nav-home").click(function () {
     goTo(getCurrentTab(), "homepage");
   });
-  $("#nav-contact").click(function() {
+  $("#nav-contact").click(function () {
     goTo(getCurrentTab(), "contact");
   });
-  $("#nav-projects").click(function() {
+  $("#nav-projects").click(function () {
     goTo(getCurrentTab(), "all-projects");
   });
 });
